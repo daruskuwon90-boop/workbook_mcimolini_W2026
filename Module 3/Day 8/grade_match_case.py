@@ -1,8 +1,10 @@
-letter_grade = input("Enter your letter grade (A, B, C, or D): ").upper()
-# or letter_grade = letter_grade.upper()
-# This will change all of our input to upper-case for ease of comparison
+# Get input from user regarding their grade
+letter_grade = input("Enter your letter grade (A, B, C, D, or F): ")
 
-# Convert our letter grade to a GPA
+# Convert letter_grade to uppercase for ease of matching
+letter_grade = letter_grade.upper()
+
+# We'll use a match case to determine the GPA from the letter_grade
 match letter_grade:
     case "A":
         gpa = 4.0
@@ -14,16 +16,19 @@ match letter_grade:
         gpa = 2.0
     case "F":
         gpa = 1.0
-    case _: # default case
-        print("Could not determine numeric grade")
+    case _:
+        print("Could not determine grade")
         gpa = 0.0
-# Equal to:
+
+# if block alternative
 # if letter_grade == "A":
-#   gpa = 4.0
+#    gpa = 4.0
 # elif letter_grade == "B":
-#   gpa = 3.3
-# ...
+#    gpa = 3.3
+# elif letter_grade == "C":
+#    ...
 # else:
-#   print...
+#    print("Could not determine grade")
+#    gpa = 0.0
 
 print(f"Your GPA is {gpa}")
